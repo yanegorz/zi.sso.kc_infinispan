@@ -1,14 +1,22 @@
-# Ansible Collection - infinispan
+# Ansible Collection - middleware_automation.infinispan
 
+<!--start build_status -->
 [![Build Status](https://github.com/ansible-middleware/infinispan/workflows/CI/badge.svg?branch=main)](https://github.com/ansible-middleware/infinispan/actions/workflows/ci.yml)
 
+> **_NOTE:_ If you are Red Hat customer, install `redhat.data_grid` from [Automation Hub](https://console.redhat.com/ansible/ansible-dashboard) as the certified version of this collection.**
+<!--end build_status -->
 
-Collection to install [Infinispan](https://infinispan.org/) or [Red Hat DataGrid](https://www.redhat.com/en/technologies/jboss-middleware/data-grid) server configurations, with optional remote caches for [Keycloak](https://www.keycloak.org/) or [Red Hat Single Sign-On](https://access.redhat.com/products/red-hat-single-sign-on). 
+<!--start upstream_downstream -->
+This is an Ansible collection dedicated to [Infinispan](https://infinispan.org/).
+
+Infinispan can be used as remote caches for other software, such as [Keycloak](https://www.keycloak.org/) or [Wildfly](https://https://www.wildfly.org/).
+<!--end upstream_downstream -->
+
 
 <!--start requires_ansible-->
 ## Ansible version compatibility
 
-This collection has been tested against following Ansible versions: **>=2.9.10**.
+This collection has been tested against following Ansible versions: **>=2.14.0**.
 
 Plugins and modules within a collection may be tested with only specific Ansible versions. A collection may contain metadata that identifies these versions.
 <!--end requires_ansible-->
@@ -16,11 +24,14 @@ Plugins and modules within a collection may be tested with only specific Ansible
 
 ## Installation and Usage
 
+<!--start galaxy_download -->
 ### Installing the Collection from Ansible Galaxy
 
 Before using the collection, you need to install it with the Ansible Galaxy CLI:
 
     ansible-galaxy collection install middleware_automation.infinispan
+
+<!--end galaxy_download -->
 
 You can also include it in a `requirements.yml` file and install it via `ansible-galaxy collection install -r requirements.yml`, using the format:
 
@@ -29,6 +40,24 @@ You can also include it in a `requirements.yml` file and install it via `ansible
 collections:
   - name: middleware_automation.infinispan
 ```
+
+
+### Build and install locally
+
+Clone the repository, checkout the tag you want to build, or pick the main branch for the development version; then:
+
+    ansible-galaxy collection build .
+    ansible-galaxy collection install middleware_automation-amq-*.tar.gz
+
+
+### Dependencies
+
+#### Ansible collections:
+
+* [middleware_automation.common](https://github.com/ansible-middleware/common)
+* [ansible.posix](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html)
+
+#### Python:
 
 The infinispan collection also depends on the following python packages to be present on the controller host:
 
@@ -39,34 +68,19 @@ A requirement file is provided to install:
 
     pip install -r requirements.txt
 
-
+<!--start roles_paths -->
 ### Included roles
 
 * [`infinispan`](https://github.com/ansible-middleware/infinispan/tree/main/roles/infinispan): performs an installation of Infinispan or DataGrid nodes or cluster, with configuration of static caches.
 * [`infinispan_cache`](https://github.com/ansible-middleware/infinispan/tree/main/roles/infinispan_cache): creates Infinispan or DataGrid caches at runtime.
+<!--end roles_paths -->
 
+<!--start support -->
+<!--end support -->
 
-### Choosing between Red Hat products and upstream project
-
-The `infinispan` role supports installing Red Hat Datagrid from the Customer Portal, when the following variables are defined:
-
-```
-rhn_username: '<customer_portal_username>'
-rhn_password: '<customer_portal_password>'
-jdg_enable: True
-```
-
-It is also possible to select which update to install by setting the `jdg_version` to one of `['8.2.0','8.2.2','8.2.3']`
-
-Check the role [README](https://github.com/ansible-middleware/infinispan/blob/main/roles/infinispan/README.md) for further details.
-
-## Support
-
-Infinispan collection v1.0.0 is a Beta release and for Technical Preview. If you have any issues or questions related to collection, please don't hesitate to contact us on Ansible-middleware-core@redhat.com or open an issue on https://github.com/ansible-middleware/infinispan/issues
 
 ## License
 
 Apache License v2.0 or later
 
 See [LICENSE](LICENSE) to view the full text.
-

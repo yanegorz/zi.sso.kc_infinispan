@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ansible Collection - infinispan &mdash; Infinispan Ansible Collection  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/ansible-basic-sphinx-ext.css" type="text/css" />
+  <title>Ansible Collection - middleware_automation.infinispan &mdash; Infinispan Ansible Collection  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/ansible-basic-sphinx-ext.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Infinispan Ansible Collection
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Infinispan Ansible Collection
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -40,15 +47,19 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">User documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Ansible Collection - infinispan</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ansible Collection - middleware_automation.infinispan</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ansible-version-compatibility">Ansible version compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation-and-usage">Installation and Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installing-the-collection-from-ansible-galaxy">Installing the Collection from Ansible Galaxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#included-roles">Included roles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#choosing-between-red-hat-products-and-upstream-project">Choosing between Red Hat products and upstream project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-install-locally">Build and install locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ansible-collections">Ansible collections:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python">Python:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#included-roles">Included roles</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
 </ul>
 </li>
@@ -65,6 +76,17 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">Changelog</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Middleware collections</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/infinispan/">Infinispan / Red Hat Data Grid</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/keycloak/">Keycloak / Red Hat Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/wildfly/">Wildfly / Red Hat JBoss EAP</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/jws/">Tomcat / Red Hat JWS</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/amq/">ActiveMQ / Red Hat AMQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/amq_streams/">Kafka / Red Hat AMQ Streams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/redhat-csp-download/">Red Hat CSP Download</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/ansible_collections_jcliff/">JCliff</a></li>
+</ul>
 
         </div>
       </div>
@@ -79,8 +101,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Ansible Collection - infinispan</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Ansible Collection - middleware_automation.infinispan</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,31 +112,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ansible-collection-infinispan">
-<h1>Ansible Collection - infinispan<a class="headerlink" href="#ansible-collection-infinispan" title="Permalink to this headline"></a></h1>
+  <section id="ansible-collection-middleware-automation-infinispan">
+<h1>Ansible Collection - middleware_automation.infinispan<a class="headerlink" href="#ansible-collection-middleware-automation-infinispan" title="Link to this heading"></a></h1>
+<!--start build_status -->
 <p><a class="reference external" href="https://github.com/ansible-middleware/infinispan/actions/workflows/ci.yml"><img alt="Build Status" src="https://github.com/ansible-middleware/infinispan/workflows/CI/badge.svg?branch=main" /></a></p>
-<p>Collection to install <a class="reference external" href="https://infinispan.org/">Infinispan</a> or <a class="reference external" href="https://www.redhat.com/en/technologies/jboss-middleware/data-grid">Red Hat DataGrid</a> server configurations, with optional remote caches for <a class="reference external" href="https://www.keycloak.org/">Keycloak</a> or <a class="reference external" href="https://access.redhat.com/products/red-hat-single-sign-on">Red Hat Single Sign-On</a>.</p>
+<blockquote>
+<div><p><strong><em>NOTE:</em> If you are Red Hat customer, install <code class="docutils literal notranslate"><span class="pre">redhat.data_grid</span></code> from <a class="reference external" href="https://console.redhat.com/ansible/ansible-dashboard">Automation Hub</a> as the certified version of this collection.</strong></p>
+</div></blockquote>
+<!--end build_status -->
+<!--start upstream_downstream -->
+<p>This is an Ansible collection dedicated to <a class="reference external" href="https://infinispan.org/">Infinispan</a>.</p>
+<p>Infinispan can be used as remote caches for other software, such as <a class="reference external" href="https://www.keycloak.org/">Keycloak</a> or <a class="reference external" href="https://https://www.wildfly.org/">Wildfly</a>.</p>
+<!--end upstream_downstream -->
 <!--start requires_ansible-->
 <section id="ansible-version-compatibility">
-<h2>Ansible version compatibility<a class="headerlink" href="#ansible-version-compatibility" title="Permalink to this headline"></a></h2>
-<p>This collection has been tested against following Ansible versions: <strong>&gt;=2.9.10</strong>.</p>
+<h2>Ansible version compatibility<a class="headerlink" href="#ansible-version-compatibility" title="Link to this heading"></a></h2>
+<p>This collection has been tested against following Ansible versions: <strong>&gt;=2.14.0</strong>.</p>
 <p>Plugins and modules within a collection may be tested with only specific Ansible versions. A collection may contain metadata that identifies these versions.</p>
 <!--end requires_ansible-->
 </section>
 <section id="installation-and-usage">
-<h2>Installation and Usage<a class="headerlink" href="#installation-and-usage" title="Permalink to this headline"></a></h2>
+<h2>Installation and Usage<a class="headerlink" href="#installation-and-usage" title="Link to this heading"></a></h2>
+<!--start galaxy_download -->
 <section id="installing-the-collection-from-ansible-galaxy">
-<h3>Installing the Collection from Ansible Galaxy<a class="headerlink" href="#installing-the-collection-from-ansible-galaxy" title="Permalink to this headline"></a></h3>
+<h3>Installing the Collection from Ansible Galaxy<a class="headerlink" href="#installing-the-collection-from-ansible-galaxy" title="Link to this heading"></a></h3>
 <p>Before using the collection, you need to install it with the Ansible Galaxy CLI:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ansible-galaxy collection install middleware_automation.infinispan
 </pre></div>
 </div>
+<!--end galaxy_download -->
 <p>You can also include it in a <code class="docutils literal notranslate"><span class="pre">requirements.yml</span></code> file and install it via <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.yml</span></code>, using the format:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
-<span class="nt">collections</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">middleware_automation.infinispan</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">middleware_automation.infinispan</span>
 </pre></div>
 </div>
+</section>
+<section id="build-and-install-locally">
+<h3>Build and install locally<a class="headerlink" href="#build-and-install-locally" title="Link to this heading"></a></h3>
+<p>Clone the repository, checkout the tag you want to build, or pick the main branch for the development version; then:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ansible-galaxy collection build .
+ansible-galaxy collection install middleware_automation-amq-*.tar.gz
+</pre></div>
+</div>
+</section>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h3>
+<section id="ansible-collections">
+<h4>Ansible collections:<a class="headerlink" href="#ansible-collections" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ansible-middleware/common">middleware_automation.common</a></p></li>
+<li><p><a class="reference external" href="https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html">ansible.posix</a></p></li>
+</ul>
+</section>
+<section id="python">
+<h4>Python:<a class="headerlink" href="#python" title="Link to this heading"></a></h4>
 <p>The infinispan collection also depends on the following python packages to be present on the controller host:</p>
 <ul class="simple">
 <li><p>lxml</p></li>
@@ -124,34 +176,24 @@
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
 </pre></div>
 </div>
+<!--start roles_paths -->
+</section>
 </section>
 <section id="included-roles">
-<h3>Included roles<a class="headerlink" href="#included-roles" title="Permalink to this headline"></a></h3>
+<h3>Included roles<a class="headerlink" href="#included-roles" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ansible-middleware/infinispan/tree/main/roles/infinispan"><code class="docutils literal notranslate"><span class="pre">infinispan</span></code></a>: performs an installation of Infinispan or DataGrid nodes or cluster, with configuration of static caches.</p></li>
 <li><p><a class="reference external" href="https://github.com/ansible-middleware/infinispan/tree/main/roles/infinispan_cache"><code class="docutils literal notranslate"><span class="pre">infinispan_cache</span></code></a>: creates Infinispan or DataGrid caches at runtime.</p></li>
 </ul>
+<!--end roles_paths -->
+<!--start support -->
+<!--end support -->
 </section>
-<section id="choosing-between-red-hat-products-and-upstream-project">
-<h3>Choosing between Red Hat products and upstream project<a class="headerlink" href="#choosing-between-red-hat-products-and-upstream-project" title="Permalink to this headline"></a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">infinispan</span></code> role supports installing Red Hat Datagrid from the Customer Portal, when the following variables are defined:</p>
-<div class="highlight-YAML+Jinja notranslate"><div class="highlight"><pre><span></span><span class="nt">rhn_username</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;customer_portal_username&gt;&#39;</span><span class="w"></span>
-<span class="nt">rhn_password</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;customer_portal_password&gt;&#39;</span><span class="w"></span>
-<span class="nt">jdg_enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-</pre></div>
-</div>
-<p>It is also possible to select which update to install by setting the <code class="docutils literal notranslate"><span class="pre">jdg_version</span></code> to one of <code class="docutils literal notranslate"><span class="pre">['8.2.0','8.2.2','8.2.3']</span></code></p>
-<p>Check the role <a class="reference external" href="https://github.com/ansible-middleware/infinispan/blob/main/roles/infinispan/README.md">README</a> for further details.</p>
-</section>
-</section>
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
-<p>Infinispan collection v1.0.0 is a Beta release and for Technical Preview. If you have any issues or questions related to collection, please don’t hesitate to contact us on Ansible-middleware-core&#64;redhat.com or open an issue on https://github.com/ansible-middleware/infinispan/issues</p>
 </section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline"></a></h2>
+<h2>License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
 <p>Apache License v2.0 or later</p>
-<p>See <span class="xref myst">LICENSE</span> to view the full text.</p>
+<p>See <a class="reference internal" href="#LICENSE"><span class="xref myst">LICENSE</span></a> to view the full text.</p>
 </section>
 </section>
 
@@ -166,7 +208,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Red Hat, Inc..</p>
+    <p>&#169; Copyright 2024, Red Hat, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
